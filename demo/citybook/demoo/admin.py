@@ -11,12 +11,13 @@ from .models import Category
 class HandbookAdmin(admin.ModelAdmin):
     list_display = ["name", "category", "description", "address", "city"]
     list_filter = ["name", "category", "address", "city"]
+    search_fields = ['name', 'category', 'city', 'address']
 
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ["cName",  "phone1", "phone2", "email"]
-    list_filter = ["cName"]
+    list_display = ["phone1", "phone2", "email"]
+    list_filter = ["email"]
 
 
 @admin.register(Category)
